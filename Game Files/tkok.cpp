@@ -78,7 +78,7 @@ void checkStep(Game& g){                                        /// Outputs Text
         } else {
             g.endGame = true;
             system("cls");
-            cout<<"You abandon the lands of "<<green<<"Kyura"<<white<<" and leave the people to their own fate. \nQueen "<<blue<<"Aurora"<<white<<" was executed in public and the vampires"
+            cout<<"You abandon the lands of "<<green<<"Kyura"<<white<<" and leave the people to their own fate. \nQueen "<<blue<<"Aurora"<<white<<" was executed in public and the vampires "
             <<"took over the realm. \nSome weeks later, you "<<red<<"die"<<white<<" assaulted by a bunch of bandits in the outskirts of the reign."<<endl;
             text(0);
         }

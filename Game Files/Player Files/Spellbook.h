@@ -2,6 +2,7 @@
 #define SPELLBOOK_H
 
 enum Spells {
+    Heal,
     Fireball,
     IceScorch,
 };
@@ -9,12 +10,13 @@ enum Spells {
 class Spellbook{
 
     int heals;
-    int fireballs;
+    int firespells;
     bool icespells;
 
     public:
         Spellbook();
         void refill_heals();
+        int heal(bool hasMedicine);
         int fireball();
         int icescorch(bool hasRing);
 };

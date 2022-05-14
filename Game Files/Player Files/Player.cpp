@@ -17,18 +17,25 @@ int Player::attack(){
 
     damage = 1+rand()%dice;
     crit = 1+rand()%10;
-
-    if(crit == 10)
-        return damage*2;
-    else return damage;
-
+    return (crit == 10) ? damage*2 : damage;
 };
 
 int Player::recieveDamage(int dmg){
+
     health -= dmg;
+
+    if (health < 0) {
+        health = 0;
+        status = Dead;
+    }
+        
     return health;
 };
 
-int Player::heal(){
-
+int Player::spell(Spells s){
+    switch (s){
+        case Heal: return spells.heal(inv.hasItem(Medicine));
+        case Fireball: return spells.fireball();
+        case IceScorch: return spells.icescorch(inv.hasItem(Ring));
+    }
 }

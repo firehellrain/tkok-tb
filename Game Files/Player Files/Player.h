@@ -21,7 +21,7 @@ class Player {
     public:
         Player();
         int attack();
-        int heal();
+        int spell(Spells spell);
         int recieveDamage(int dmg);
 };
 

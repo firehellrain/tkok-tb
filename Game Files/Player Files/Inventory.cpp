@@ -13,7 +13,6 @@ bool Inventory::addItem(Item i){
         load++;
         return true;
     } else return false;
-    
 }
 
 bool Inventory::hasItem(Item i){

@@ -24,7 +24,6 @@ class Inventory {
         Inventory();
         bool addItem(Item i);
         bool hasItem(Item i);
-
 };
 
 #endif

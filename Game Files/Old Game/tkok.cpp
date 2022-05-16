@@ -273,8 +273,8 @@ int main(){
             displayEncounter(p, m, g);
         }
 
-        while(((m.health>0)&&(p.health>0))&&(!g.terminal)) gameRound(p, m, g);;
-
+        while(((m.health>0)&&(p.health>0))&&(!g.terminal)) gameRound(p, m, g);
+        
         if(g.win){
             if(m.name == 'D'){
                 newRound(g, m);

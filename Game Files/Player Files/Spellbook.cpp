@@ -13,14 +13,17 @@ void Spellbook::refill_heals(){
 
 int Spellbook::heal(bool hasMedicine){
 
-    heals--;
+    if (heals > 0) {
+        
+        heals--;
 
-    int dado = 0;
-    int critico = 1+rand()%10;
+        int dado = 0;
+        int critico = 1+rand()%10;
 
-    dado = hasMedicine ? 10+rand()%15 : 5+rand()%10;
+        dado = hasMedicine ? 10+rand()%15 : 5+rand()%10;
 
-    return (critico==10) ? dado*2 : dado;
+        return (critico==10) ? dado*2 : dado;
+    } else return -1;
 }
 
 int Spellbook::fireball(){
@@ -36,10 +39,10 @@ int Spellbook::fireball(){
             crit = 1+rand()%10;
             dice = 10+rand()%15;
             return (crit == 10) ? dice*2 : dice;
-        }
+        } else return 0;
     }
     
-    return 0;
+    return -1;
 }
 
 int Spellbook::icescorch(bool hasRing){
@@ -54,8 +57,8 @@ int Spellbook::icescorch(bool hasRing){
             crit = 1+rand()%10;
             dice = 5+rand()%10;
             return (crit == 10) ? dice*2 : dice;
-        }
+        } else return 0;
     }
     
-    return 0;
+    return -1;
 }

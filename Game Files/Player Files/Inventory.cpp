@@ -8,11 +8,12 @@ Inventory::Inventory(){
 
 bool Inventory::addItem(Item i){
     
-    if(load<5){
-        bag[load] = i;
-        load++;
-        return true;
-    } else return false;
+    if(load == 5) return false;
+    
+    bag[load] = i;
+    load++;
+    return true;
+    
 }
 
 bool Inventory::hasItem(Item i){

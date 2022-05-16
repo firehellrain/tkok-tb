@@ -9,14 +9,12 @@ Player::Player(){
 
 int Player::attack(){
 
-    int damage;
-    int crit;
-    int dice = 5;
+    int dice, crit, damage;
 
-    if (inv.hasItem(Sword)) dice = 15;
-
+    dice = inv.hasItem(Sword) ? 15 : 5;
     damage = 1+rand()%dice;
     crit = 1+rand()%10;
+    
     return (crit == 10) ? damage*2 : damage;
 };
 

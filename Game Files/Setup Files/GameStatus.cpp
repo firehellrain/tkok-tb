@@ -2,14 +2,14 @@
 
 GameStatus::GameStatus(){
 
-    int round = 1;
-    Events event = null;
-    int playEvSize = numEvents;
-    bool endGame = false;
+    round = 1;
+    event = null;
+    playEvSize = numEvents;
+    endGame = false;
 
-    for(int i = 1; i<=playEvSize; i++){
+    for(int i = 1; i<=playEvSize; i++)
         playEv[i] = i;
-    }
+    
 };
 
 Events GameStatus::chooseEvent(){

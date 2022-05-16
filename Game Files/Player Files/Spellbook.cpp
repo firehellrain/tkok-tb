@@ -13,52 +13,42 @@ void Spellbook::refill_heals(){
 
 int Spellbook::heal(bool hasMedicine){
 
-    if (heals > 0) {
-        
-        heals--;
+    int dice, crit;
 
-        int dado = 0;
-        int critico = 1+rand()%10;
+    if (heals == 0) return -1;
+    heals--;
 
-        dado = hasMedicine ? 10+rand()%15 : 5+rand()%10;
+    crit = 1+rand()%10;
+    dice = hasMedicine ? 10+rand()%15 : 5+rand()%10;
 
-        return (critico==10) ? dado*2 : dado;
-    } else return -1;
+    return (crit==10) ? dice*2 : dice;
 }
 
 int Spellbook::fireball(){
     
-    int crit, spellFailure, dice;
+    int dice, crit, spellFailure;
     
-    if (firespells > 0){
-        firespells--;
+    if (firespells == 0) return -1;
+    firespells--;
 
-        spellFailure = 1+rand()%15;
-
-        if(spellFailure > 5){
-            crit = 1+rand()%10;
-            dice = 10+rand()%15;
-            return (crit == 10) ? dice*2 : dice;
-        } else return 0;
-    }
-    
-    return -1;
+    spellFailure = 1+rand()%15;
+    if(spellFailure < 5) return 0;
+        
+    crit = 1+rand()%10;
+    dice = 10+rand()%15;
+    return (crit == 10) ? dice*2 : dice;
 }
 
 int Spellbook::icescorch(bool hasRing){
 
-    int crit, spellFailure, dice;
+    int dice, crit, spellFailure;
     
-    if (icespells){
+    if (!icespells) return -1;
 
-        spellFailure = hasRing ? 1+rand()%15 : 1+rand()%20;
-
-        if(spellFailure > 5){
-            crit = 1+rand()%10;
-            dice = 5+rand()%10;
-            return (crit == 10) ? dice*2 : dice;
-        } else return 0;
-    }
+    spellFailure = hasRing ? 1+rand()%15 : 1+rand()%20;
+    if(spellFailure < 5) return 0;
     
-    return -1;
+    crit = 1+rand()%10;
+    dice = 5+rand()%10;
+    return (crit == 10) ? dice*2 : dice;
 }

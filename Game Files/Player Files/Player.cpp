@@ -20,12 +20,9 @@ int Player::attack(){
 
 int Player::recieveDamage(int dmg){
 
-    health -= dmg;
+    health = std::max(health-dmg, 0);
 
-    if (health < 0) {
-        health = 0;
-        status = Dead;
-    }
+    if (health == 0) status = Dead;
         
     return health;
 };

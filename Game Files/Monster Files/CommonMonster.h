@@ -3,11 +3,13 @@
 
 class CommonMonster {
 
+    char name;
     int health;
     int damage;
 
     public:
-        CommonMonster(int health, int damage);
+        CommonMonster(char n, int health, int damage);
+        void getName();
         int attack();
         int recieveDamage(int dmg);
 

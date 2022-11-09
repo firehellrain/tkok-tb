@@ -1,4 +1,10 @@
-#ifndef GAMESTATUS_h
-#define GAMESTATUS_H
+#ifndef EVENTS_H
+#define EVENTS_H
+
+class Events(){
+
+  
+
+}
 
 #endif

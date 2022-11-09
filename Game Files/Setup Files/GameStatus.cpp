@@ -3,7 +3,7 @@
 GameStatus::GameStatus(){
 
     round = 1;
-    event = null;
+    evnt = null;
     playEvSize = numEvents;
     endGame = false;
 
@@ -16,16 +16,14 @@ Events GameStatus::chooseEvent(){
 
     int num = 1+rand()%playEvSize;
 
-    event = playEv[num];
+    evnt = playEv[num];
     realloc_events(num);
     
-    return event;
+    return evnt;
 };
 
 void GameStatus::realloc_events(int pos){
     
-    Events before, after, aux;
-
     for(int i = pos; i<playEvSize; i++)
         playEv[i] = playEv[i+1];
     

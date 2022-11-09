@@ -1,4 +1,4 @@
-#ifndef GAMESTATUS_h
+#ifndef GAMESTATUS_H
 #define GAMESTATUS_H
 #include <array>
 #include <stdlib.h>
@@ -22,7 +22,7 @@ enum Events{
 class GameStatus {
 
     int round;
-    Events event;
+    Events evnt;
     PlayableEvents playEv;
     int playEvSize;
     bool endGame;
